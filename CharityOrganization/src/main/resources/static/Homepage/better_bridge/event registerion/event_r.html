@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html
+  lang="en"
+  class="light-style customizer-hide"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+<style>
+
+
+</style>
+
+
+
+
+
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Event Registiration</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+   
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+  
+
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link rel="stylesheet" href="../assets/vendor/css/pages/page-auth.css" />
+    <link rel="stylesheet" href="./css/event regestriation.css">
+    <!-- Helpers -->
+
+    
+
+
+
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <style src="./css/event regestriation.css"></style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="logo">
+        <h1>Better Bridge</h1>
+  
+        </div>
+      <nav>
+        <ul>
+        <a href="../../better bridge/index.html"><li class="text-danger">Home</li></a>
+        <a href="../Donors/INDEX don.html" class="text-black"><li>My Profile</li></a>
+        <a href="../../better bridge/events/events/main page/events.html" class="text-black"><li>Events</li></a>
+
+        <a href="../make donation/make donations/donations/main page/donation.html" class="text-black"><li><button class="btn btn-danger">Donate Now</button></li></a>
+        </ul>
+        </nav>
+      </div>
+      <hr />
+    
+    
+
+
+    <div class="container-xxl">
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+          <!-- Register -->
+          <div class="card">
+            <div class="card-body">
+              <!-- Logo -->
+              <div class="app-brand justify-content-center">
+            
+                      
+                  <span class="app-brand-text demo text-body fw-bolder">Better Bridge</span>
+                </a>
+              </div>
+              <!-- /Logo -->
+              <h4 class="mb-1">Welcome to Better Bridge Charity <span class="position"> 👋</span></h4>
+
+             
+
+              <form id="formAuthentication" class="mb-3" action="#" method="">
+                <div class="mb-3">
+                  <label for="eventName" class="form-label">Event's Name</label>
+                  <input disabled
+                    type="text"
+                    class="form-control"
+                    id="eventName"
+                    name="eventName"
+                    placeholder=""
+                    autofocus
+                  />
+                </div>
+
+
+
+                <div class="mb-3">
+                  <label for="name" class="form-label">Username</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your email or username"
+                    autofocus
+                  />
+                </div>
+                <div class="mb-3 form-password-toggle">
+                  <div class="d-flex justify-content-between">
+                    <label class="form-label" for="phone">Phone Number</label>
+
+                  </div>
+                  <div class="input-group input-group-merge">
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-control"
+                      name="phone"
+                      placeholder="+20101212324"
+                      aria-describedby="Phone"
+                    />
+
+                  </div>
+                </div>
+
+                <div class="mb-3 form-password-toggle">
+                  <div class="d-flex justify-content-between">
+                    <label class="form-label" for="donate">Want to make donation before attending ?</label>
+
+                  </div>
+                  <div class="input-group input-group-merge">
+                    <input
+                      type="number"
+                      id="Donation"
+                      class="form-control"
+                      name="donate"
+                      placeholder="0"
+                      aria-describedby="donate"
+                    />
+
+                  </div>
+                </div>
+
+
+
+
+
+                
+
+                
+
+                
+                <div class="mb-3">
+                 <button class="btn btn-primary d-grid w-100" onclick="sendDonorRequestParticipate()" type="button">Register</button>
+                </div>
+
+
+              </form>
+
+
+                </a>
+              </p>
+            </div>
+          </div>
+          <!-- /Register -->
+        
+
+
+    <!-- / Content -->
+
+    
+
+
+
+
+
+        
+
+    
+
+
+    <script src="./js/eventR.js"></script>
+
+
+    <script src="../../Admin/node_modules/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+  // Function to get the value of a URL parameter by name
+  function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  }
+
+  // Get the event ID from the URL
+  
+  // Use the event ID as needed
+  
+  
+  
+  
+  
+  
+  
+  // function fetchAndUpdateDonorInfo() {
+    
+    // 	let id  = sessionStorage.getItem('id');
+    
+    // axios.put(`http://localhost:8081/Donor/update/{id}/${id}`)
+    // 		.then(response => {
+      // 				const donor = response.data;
+      
+      // 				console.log(donor);
+      // 				const role  = document.getElementById('Role');
+      // 				role.innerHTML = `${donor.decryptedRole}`
+      // 				 const donorForm = document.getElementById('Selected');
+      // 				donorForm.innerHTML = ''; // Clear existing table rows
+      
+      
+      
+      
+      // 					//	const profile 
+      
+      
+      // 			donorForm.innerHTML += profile
+      
+      
+      
+      // 		})
+      // 		.catch(error => {
+        // 				console.error('Error fetching events:', error);
+        // 		});
+        
+        
+        
+        
+        
+        // 						};
+        
+        
+        
+        
+        fetchDonorUserInfo();
+        
+        // Function to fetch user information from the server using Axios
+        function fetchDonorUserInfo() {
+          var userId  = sessionStorage.getItem('id');
+          
+          // Replace 'fetchUserInfoURL' with the actual endpoint URL to fetch user details
+          axios.get(`http://localhost:8081/Donor/show_donor_profile/${userId}`)
+          .then(function (response) {
+            // Handle success, populate the form fields with the fetched user information
+            var userInfo = response.data;
+            document.getElementById('name').value = userInfo.decryptedUsername;
+            document.getElementById('phone').value = userInfo.decryptedPhoneNumber;
+            //document.getElementById('donate').value = userInfo.donate;
+          })
+          .catch(function (error) {
+            // Handle error
+            console.error('Failed to fetch user details:', error);
+          });
+        }
+        
+        
+        
+        function sendDonorRequestParticipate() {
+          var eventId = getUrlParameter('eventId');
+          var userId  = sessionStorage.getItem('id');
+          let donationInput = document.getElementById('Donation');
+          let donationValue = donationInput.value;
+
+
+          console.log('Event ID:', eventId);
+          console.log('User ID:', userId);
+          console.log(donationValue)
+          // Replace 'fetchUserInfoURL' with the actual endpoint URL to fetch user details
+          axios.post(`http://localhost:8081/Donor/participate_on_an_event/${userId}/${eventId}/${donationValue}`)
+          .then(function (response) {
+            // Handle success
+            var message = "Register Successfully"; // Assuming the response contains a 'message' field
+            alert(message); // Show a success message
+          })
+          .catch(function (error) {
+            // Handle error
+            var errorMessage = "Failed registertion"; // Assuming the error response contains a 'message' field
+            alert(errorMessage); // Show an error message
+          });
+        }
+        
+        
+        
+        // Fetch user details and populate the form fields
+        fetchDonorUserInfo();
+        
+        
+      //  sendDonorRequestParticipate();
+        
+        
+        
+      </script>
+
+</body>
+</html>

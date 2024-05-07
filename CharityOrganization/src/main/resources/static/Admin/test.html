@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DASHMIN - Bootstrap Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+  </button>
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Event</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+            <form action="">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" name="EventName" placeholder="EventName">
+                    <label for="floatingInput">Event Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingLocation" placeholder="Location">
+                    <label for="floatingPassword">Location</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingData" placeholder="Data">
+                    <label for="floatingPassword">Data of the Event</label>
+                </div>
+
+                <input class="form-control mt-4" type="file" id="formFile">
+
+                <div class="col-sm-10 ">
+                  
+                  <button type="submit" class="btn btn-primary my-5 mx-2">Update</button>
+                  <button type="button" class="btn btn-warning ms-5" data-bs-dismiss="modal">Close</button>
+
+                  
+                </div>
+
+
+              </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

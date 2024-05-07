@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as a Donor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .registration-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px; /* Adjust width as needed */
+        }
+        .registration-form h2 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<div class="registration-form">
+    <h2>Register as a Donor</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="pass" name="pass" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" id="BD" name="BD" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        </div>
+        <button type="button" id="addDonorButton" class="btn">Register</button>
+    </form>
+</div>
+
+
+<script src="../Admin/node_modules/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    
+    // Pure JavaScript implementation
+    document.addEventListener("DOMContentLoaded", function () {
+        // Handle form submission
+        document.getElementById("addDonorButton").addEventListener("click", function () {
+            // Get form data
+            var formData = {
+        birthDate : document.getElementById("BD").value,
+        phoneNumber: document.getElementById("phoneNumber").value, 
+        user:{
+            username: document.getElementById("name").value,
+            password: document.getElementById("pass").value,
+            email: document.getElementById("email").value
+            }
+
+        };
+        console.log("The from has been sended");
+
+
+            // Perform Axios POST request to add event
+            axios.post('http://localhost:8081/Donor/register', formData)
+                .then(function (response) {
+                    // Display success toast message
+                    Toastify({
+                        text: "Registration successfully",
+                        duration: 3000,
+                        gravity: "top",
+                        position: "right",
+                        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                        stopOnFocus: true // Prevents dismissing on hover
+                    }).showToast();
+                })
+                .catch(function (error) {
+                    // Display error toast message if needed
+                    Toastify({
+                        text: "Registration successfully",
+                        duration: 3000,
+                        gravity: "top",
+                        position: "right",
+                        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+                        stopOnFocus: true, // Prevents dismissing on hover
+                        className: "toastify-notification toastify-success"
+                    }).showToast();
+                    
+                    Toastify({
+                        text: "Failed to Register",
+                        duration: 3000,
+                        gravity: "top",
+                        position: "right",
+                        backgroundColor: "linear-gradient(to right, #ff4b1f, #ff9068)",
+                        stopOnFocus: true, // Prevents dismissing on hover
+                        className: "toastify-notification toastify-error"
+                    }).showToast();
+                });
+        });
+    });
+</script>
+
+
+</body>
+</html>

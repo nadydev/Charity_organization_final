@@ -1,0 +1,51 @@
+body{
+    /* background-color:  rgb(36, 53, 63); */
+    font-family: "Titillium Web", sans-serif;
+}
+.sign-up{
+    box-shadow: rgb(0, 0, 0) -5px 2px 54px -9px;
+}
+.name-up{
+    background-color: transparent !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+ h1{
+    color: #EC456B;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.p-up a{
+    text-decoration: none;
+    transition: 0.5s all;
+}
+.p-up a:hover{
+    text-decoration:underline;
+
+}
+.name-up ,textarea{
+    color: black !important;;
+}
+ .navbar-nav .nav-link{
+    color: rgba(255,255,255,.5);
+}
+.welcome{
+    box-shadow: -5px 2px 54px -9px rgb(0 0 0);
+  
+}
+.group{
+    box-shadow: -5px 2px 54px -9px rgb(0 0 0);
+}
+::placeholder{
+   color: #EC456B !important; 
+}
+.nav{
+    height: 57.6px;
+}
+.cont-user{
+    transform: translateY(243px);
+}

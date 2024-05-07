@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section>
+            <div class="container my-5 text-center">
+                <form class="sign-up w-75 p-5 m-auto 
+                " method="get">
+                    <h1>sign up</h1>
+                    <input  id="up-name" type="text" placeholder="Enter your name" pla class="form-control my-3 name-up text-white">
+                    <input id="up-email" type="email" placeholder="Enter your email" class="form-control my-3 name-up">
+                    <input id="up-pass" type="password" placeholder="Enter password" class="form-control my-3 name-up" >
+                    <p  id="exist">   </p>
+                    <select class="form-select text-danger" aria-label="Default select example" required onchange="showMoreSelect(this)" >
+                        <option selected>Choose Your account type </option>
+                        <option value="Donor">Donor</option>
+                        <option value="Sponsor">Sponsor</option>
+                        <option value="Volunteer">Volunteer</option>
+
+                      </select>
+
+                      <!-- Donor Selections -->
+
+                    <div id="donorSelect" class="d-none">
+                        <input  id="donor_no" type="number" placeholder="Phone Number" pla class="form-control my-3 name-up text-white">
+                        <input  id="donor_birth" type="number" placeholder="Enter your date of birth" pla class="form-control my-3 name-up text-white">
+                        <input  id="donor_bank" type="number" placeholder="Enter your bank account" pla class="form-control my-3 name-up text-white">
+
+                    </div>
+
+
+                    <!-- Sponsor Selection -->
+                    
+                    <div id="sponorSelect" class="d-none">
+                        <input  id="sponsor_no" type="number" placeholder="Business Number" pla class="form-control my-3 name-up text-white">
+                        <input  id="sponsor_location" type="text" placeholder="Enter your company location" pla class="form-control my-3 name-up text-white">
+
+                        <input  id="sponsor_bank" type="number" placeholder="Enter your bank account" pla class="form-control my-3 name-up text-white">
+
+                    </div>
+
+
+
+                    <!-- Volunteer Selection -->
+                    
+                    <div id="volunteerSelect" class="d-none">
+                            <input  id="volunteer_no" type="number" placeholder="Your Phone Number" pla class="form-control my-3 name-up text-white">
+                        
+<input  id="volunteer_location" type="text" placeholder="Enter your address" pla class="form-control my-3 name-up text-white">
+    
+<input  id="volunteer_date" type="number" placeholder="Enter your birth date" pla class="form-control my-3 name-up text-white">
+
+<input  id="volunteer_campaign" type="text" placeholder="Enter the campaign you want to participate" pla class="form-control my-3 name-up text-white">
+
+
+<input  id="volunteer_task" type="text" placeholder="Enter the market task you want to participate in" pla class="form-control my-3 name-up text-white">
+
+
+
+
+    
+                        </div>
+
+
+
+
+
+
+
+                    <button id="btn-up" class="btn btn-outline-danger w-100 my-3" onclick="">Sign up</button>
+                    <p class="text-danger p-up">You have an account?
+                        <a href="../login/auth-login-basic.html" class="text-danger">Sign In</a>
+                    </p>
+
+
+
+                </form>
+
+            </div>
+    </section>
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/register.js"></script>
+</body>
+</html>

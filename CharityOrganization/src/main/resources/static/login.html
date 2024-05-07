@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px; /* Increased width */
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .error-message {
+            color: rgb(232, 8, 120);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="error-message" id="error-message"></div>
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+
+            <a href="regist/Register.html">Register Now</a>
+        </form>
+    </div>
+
+    <script>
+        // Function to display error message if error parameter is present in the URL
+        function displayErrorMessage() {
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                document.getElementById('error-message').innerText = 'Invalid username or password.';
+            }
+        }
+
+        window.onload = displayErrorMessage;
+    </script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="" >
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="img/fav.png">
+
+    <meta name="author" content="colorlib">
+
+    <meta name="description" content="">
+
+    <meta name="keywords" content="">
+
+    <meta charset="UTF-8">
+
+    <title>Events</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:300,400" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+
+
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/main.css">
+  
+
+</head>
+
+<body>
+
+    <header class="default-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <h1>Better Bridge</h1>
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="fa fa-bars"></span>
+</button>
+                <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li><a class="active" 
+                        href="../../../index.html">Home</a></li>
+                        <li><a href="../../../zakat counter/zakat.html">Zakat Calculator</a></li>
+                        <li><a href="../../../causes/causes/main page/kare/causes.html">Causes</a></li>
+                        <li><a href="#">Event</a></li>
+                        
+                        <li><a href="../../../make donation/make donations/donations/main page/donation.html">Donate Now</a></li>
+
+
+
+
+
+                            </div>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="home-banner-area relative" id="home" data-parallax="scroll">
+        <div class="overlay-bg overlay"></div>
+        <div class="container">
+            <div class="row fullscreen justify-content-lg-end">
+                <div class="banner-content col-lg-7">
+                    <h1>
+                    Our Events
+                    </h1>
+                    <h5>We are thrilled to announce our upcoming charity event, a chance to make a difference in the lives of those in need.</h5>
+
+        <a href="../../../make donation/make donations/donations/main page/donation.html" ><button class="btn-1">Donate Now</button></a>
+        <button class="btn-2">View Activity</button>
+
+
+                    
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="upcoming_event_area section-gap-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title">
+                        <h2><span>Upcoming</span> Event</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id = "Events">
+                <div class="col-lg-6">
+                    <div class="single_upcoming_event">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <figure>
+                                    <img class="img-fluid w-100" src="img/event/e1.jpg" alt="">
+                                    <div class="date">
+                                        17 Mar
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="content_wrapper">
+                                    <h3 class="title">
+<h5 id="event1">Working Syran Children</h5></a>
+                                    </h3>
+                                    <p>
+                                        Seed the life upon you are create
+                                    </p>
+                                    <div class="d-flex count_time justify-content-lg-start justify-content-center" id="clockdiv1">
+                                        <div class="single_time">
+                                            <h4 class="days">552</h4>
+                                            <p>Days</p>
+                                        </div>
+                                        <div class="single_time">
+                                            <h4 class="hours">08</h4>
+                                            <p>Hours</p>
+                                        </div>
+                                        <div class="single_time">
+                                            <h4 class="minutes">45</h4>
+                                            <p>Min</p>
+                                        </div>
+                                    </div>
+                                    <a href="../../../event registerion/event_r.html" class="primary-btn2" onclick="" id="r1">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/test.js"></script>
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<script src="../../Admin/node_modules/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    // Function to fetch and display events
+    // Function to fetch and display events
+    function fetchAndDisplayEvents() {
+    axios.get('http://localhost:8081/Admin/ManageEvents')
+        .then(response => {
+            console.log(response.data);
+            const events = response.data;
+            const eventTableBody = document.getElementById('Events');
+            eventTableBody.innerHTML = ''; // Clear existing table rows
+            
+            
+            /*  <th scope="row">${event.event_id}</th>
+            <td>${event.decryptedName}</td>
+            <td>${event.decryptedLocation}</td>
+            <td>${event.decryptedStart_date}</td>
+            <td>${event.decryptedEnd_date}</td>*/
+            events.forEach((event, index) => {
+                let max_num  = event.max_Number_of_participants ;
+                let num = event.number_of_participants ;
+                console.log(max_num);
+                console.log(num);
+                const row = `
+                <div class="col-lg-6" >
+    <div class="single_upcoming_event">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <figure>
+                    <img class="img-fluid w-100" src="img/event/e1.jpg" alt="">
+                    <div class="date">
+                        ${event.decryptedStart_date}
+                    </div>
+                </figure>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="content_wrapper">
+                    <h3 class="title">
+<h5 id="event1">  The Event  ${event.decryptedName} Starts in ${event.decryptedStart_date}</h5></a>
+                    </h3>
+                    <p>
+                       Ends in ${event.decryptedEnd_date}
+                    </p>
+                    <div class="d-flex count_time justify-content-lg-start justify-content-center" id="clockdiv1">
+                        <div class="single_time">
+                            <h4 class="days">552</h4>
+                            <p>Days</p>
+                        </div>
+                        <div class="single_time">
+                            <h4 class="hours">08</h4>
+                            <p>Hours</p>
+                        </div>
+                        <div class="single_time">
+                            <h4 class="minutes">45</h4>
+                            <p>Min</p>
+                        </div>
+                    </div>
+                    <div id="check_completed_${event.event_id}" value="${event.event_id}">
+                    <a href="javascript:void(0)" class="primary-btn2"  onclick="registerForEvent(${event.event_id})" id="r1">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                `;
+                eventTableBody.innerHTML += row;
+            let completed = document.getElementById(`check_completed_${event.event_id}`);
+            if (max_num == num && completed) {
+                completed.innerHTML = "Completed";
+                console.log("Done");
+            }
+
+            });
+            
+           
+    
+            
+        })
+        .catch(error => {
+            console.error('Error fetching events:', error);
+        });
+    
+    
+    
+    
+           
+ };
+
+
+    function registerForEvent(eventId) {
+        // Redirect the user to the registration page with the event ID as a parameter
+        window.location.href = "../../../event registerion/event_r.html?eventId=" + eventId;
+    }
+
+
+        
+    
+    
+    
+    
+    
+     fetchAndDisplayEvents() ; 
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Test -->
+
+<!-- <div class="col-lg-6" >
+    <div class="single_upcoming_event">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <figure>
+                    <img class="img-fluid w-100" src="img/event/e1.jpg" alt="">
+                    <div class="date">
+                        ${event.decryptedStart_date}
+                    </div>
+                </figure>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="content_wrapper">
+                    <h3 class="title">
+<h5 id="event1">  The Event  ${event.decryptedName}Starts in ${event.decryptedStart_date}</h5></a>
+                    </h3>
+                    <p>
+                       Ends in ${event.decryptedEnd_date}
+                    </p>
+                    <div class="d-flex count_time justify-content-lg-start justify-content-center" id="clockdiv1">
+                        <div class="single_time">
+                            <h4 class="days">552</h4>
+                            <p>Days</p>
+                        </div>
+                        <div class="single_time">
+                            <h4 class="hours">08</h4>
+                            <p>Hours</p>
+                        </div>
+                        <div class="single_time">
+                            <h4 class="minutes">45</h4>
+                            <p>Min</p>
+                        </div>
+                    </div>
+                    <a href="../../../event registerion/event_r.html" class="primary-btn2" onclick="" id="r1">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

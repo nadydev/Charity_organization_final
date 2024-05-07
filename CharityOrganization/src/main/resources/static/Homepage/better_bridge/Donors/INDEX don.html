@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donor</title>
+    <link rel="stylesheet" href="./css/mdb.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style don.css">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark position-absolute top-0 start-0 end-0">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Better Bridge</a>
+        <!-- Icons -->
+        <!-- Notifications -->
+        <ul class="navbar-nav d-flex flex-row me-1">
+            <li class="nav-item me-3 me-lg-0">
+                <div class="dropdown">
+                    <a class="me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                    role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-bell text-white"></i>
+                        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                    </a>
+
+
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                    
+                        <h6 class="text-danger p-2">thank you for your donation</h4>
+                    </ul>
+                </div>
+            </li>
+						<li>
+						<a href="../register/register.html"><button class="btn btn-danger ms-5">LogOut</button></a>
+						</li>
+        </ul>
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+
+    
+    <div class="container">
+		<div class="main-body p-5">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="card">
+						<div class="card-body">
+							<div class="d-flex flex-column align-items-center text-center">
+								<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+								<div class="mt-3">
+									<h4 id="username">John Doe</h4>
+									<p class="text-secondary mb-1" id = "Role">Donor</p>
+									<div id="mySidebar" class="sidebar">
+                                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                                <h4 class="text-center text-white">Invoice N.O 1</h4>
+                                                <p class="text-white">Donation amount : <span class="text-danger">1000 L.E</span> </p>
+                                                <p class="text-white">Donation date<span class="text-danger">:21/11/2023</span></p>
+                                                <p class="text-white">Campaign name: <span class="text-danger">Cancer victims</span></p> <br> <br> <br>
+
+                                                <h4 class="text-center text-white">Invoice N.O 2</h4>
+                                                <p class="text-white">Donation amount : <span class="text-danger">5000 L.E </span></p>
+                                                <p class="text-white">Donation date: <span class="text-danger">22/5/2023</span></p>
+                                                <p class="text-white">Campaign name:  <span class=" text-danger">making a water compass</span></p>
+                                      
+                                        
+                                      </div>
+                                      
+                                      <div id="main">
+                                        <button class="openbtn btn btn-outline-danger" onclick="openNav()">Show my invoices</button>
+                                   
+                                       
+                                      </div>
+								</div>
+							</div>
+							
+									
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<form action="#" method="get" id = "Selected">
+
+				
+				<div class="col-lg-8">
+					<div class="card">
+						<div class="card-body">
+							<div class="row mb-3">
+								<div class="col-sm-3">
+									<h6 class="mb-0">Full Name</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="text" class="form-control" value="John Doe">
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-sm-3">
+									<h6 class="mb-0">Email</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="text" class="form-control" value="john@example.com">
+								</div>
+							</div>
+						
+
+							<div class="row mb-3">
+								<div class="col-sm-3">
+									<h6 class="mb-0">Address</h6>
+								</div>
+								<div class="col-sm-9 text-secondary">
+									<input type="text" class="form-control" value="Bay Area, San Francisco, CA">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-3"></div>
+								<div class="col-sm-9 text-secondary">
+									<input type="submit" class="btn btn-primary px-4" onclick="UpdateUserInfo(event)" value="Save Changes">
+
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+      <script src="./js/mdb.min.js"></script>
+    <script src="./js/js don.js"></script>
+
+
+		<script src="../../Admin/node_modules/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script>
+			// Function to fetch and display events
+			// Function to fetch and display events
+			// let token = sessionStorage.getItem("accessToken")
+		
+			// function fetchDonorInfoFromToken(){
+			// 			axios.get(`http://localhost:8081/tokens/getUser/${token}`).then(response => {
+			// 				const DataUser = response.data;
+		
+			// 				console.log(DataUser);
+		
+						
+			
+						 
+			
+							
+			// 		})
+			// }
+		
+			//fetchDonorInfoFromToken();
+			function fetchAndDisplayDonorInfo() {
+		
+				let id  = sessionStorage.getItem('id');
+		//		axios.get(`http://localhost:8081/Donor/show_donor_profile/${id}`)	
+			axios.get(`http://localhost:8081/Profile/show/${id}`)
+					.then(response => {
+							const userinfo = response.data;
+		
+							console.log(userinfo);
+							const role  = document.getElementById('Role');
+							const username = document.getElementById('username');
+								username.innerHTML = `Welcome ${userinfo.username}`
+							role.innerHTML = `${userinfo.role}`
+							 const donorForm = document.getElementById('Selected');
+							donorForm.innerHTML = ''; // Clear existing table rows
+			
+			
+							
+							
+									const profile = `<div class="col-lg-8">
+			<div class="card">
+				<div class="card-body">
+					<div class="row mb-3">
+						<div class="col-sm-3">
+							<h6 class="mb-0">User Name</h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<input type="text" class="form-control" id = "usernameInput" value="${userinfo.username}">
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-sm-3">
+							<h6 class="mb-0">Email</h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<input type="text" class="form-control" id ="emailInput" value="${userinfo.email}">
+						</div>
+					</div>
+				
+
+					<div class="row mb-3">
+						<div class="col-sm-3">
+							<h6 class="mb-0">Password</h6>
+						</div>
+						<div class="col-sm-9 text-secondary">
+							<input type="password"  id = "passwordInput"  class="form-control" value="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3"></div>
+						<div class="col-sm-9 text-secondary">
+							<input type="submit" class="btn btn-primary px-4" onclick="UpdateUserInfo(event)" value="Save Changes">
+						</div>`;
+							
+							
+						donorForm.innerHTML += profile
+						 
+			
+							
+					})
+					.catch(error => {
+							console.error('Error fetching events:', error);
+					});
+			
+			
+			
+			
+						 
+									};
+					
+			
+			
+			
+			
+
+					function UpdateUserInfo(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    let id = sessionStorage.getItem('id');
+
+    // Get the values from input fields
+    let username = document.getElementById('usernameInput').value;
+    let email = document.getElementById('emailInput').value;
+    let password = document.getElementById('passwordInput').value;
+
+    // Construct the user data object
+    let updatedUserData = {
+        username: username,
+        email: email,
+        password: password
+    };
+
+    axios.put(`http://localhost:8081/Profile/update/${id}`, updatedUserData)
+        .then(response => {
+            console.log('User info updated successfully:', response.data);
+            
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error updating user info:', error);
+        });
+}
+
+
+
+
+		 fetchAndDisplayDonorInfo() ;
+			
+			// fetchAndDisplayEvents() ; 
+			
+			
+			
+			
+			</script>
+
+
+</body>
+</html>

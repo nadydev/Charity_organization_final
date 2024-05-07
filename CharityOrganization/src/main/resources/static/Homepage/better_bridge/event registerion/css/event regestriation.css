@@ -1,0 +1,66 @@
+body {
+  line-height: 24px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #777777;
+}
+
+
+*{transition:all 0.3s ease-in-out;}
+
+.container{
+  clear:both;
+  overflow:auto;
+}
+
+nav{float:right;}
+
+.logo h1{float:left;}
+
+.logo h1{
+  margin-top: 30px;
+  color: black;
+}
+
+ul li{
+  display: inline-block; padding:10px;
+  font-size:20px; font-family:raleway;
+  margin-top: 30px;
+}
+
+ul li:hover{
+  color:#ea2c58;
+  cursor: pointer;
+  
+
+  
+}
+.btn{
+  background-color:#ea2c58;
+}
+.btn:hover{
+  background-color:transparent;
+  color: black;
+}
+#register{
+  font-weight: 700;
+  font-size: 1rem;
+  color:ea2c58 ;
+}
+
+input[name="eventName"]::placeholder {
+color: #ea2c58 !important;
+
+}
+input[name="eventName"] {
+ background-color: transparent !important;
+ border:none;
+ text-align: center;
+ font-size: larger !important;
+}
+
+
+
+
+
